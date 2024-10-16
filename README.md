@@ -36,22 +36,22 @@ nano GEMS_C.sh                  # open a new text editor
 ### Load the Anaconda module to use srun 
       
 module purge                                     # unload every other environment to avoid conflict        
-module use /projects/community/modulefiles                                  
-module load gcc/11.2/openmpi/4.1.6-ez82
-module load gsl/2.8-ts840      # gsl/2.5-bd387
+module use /projects/community/modulefiles                                          
+module load gcc/11.2/openmpi/4.1.6-ez82      
+module load gsl/2.8-ts840                 
 
-### Navigate to the directory with the executable           
-cd /home/jl2815/tco/GEMS_C
+### Navigate to the directory with the executable                  
+cd /home/jl2815/tco/GEMS_C         
 
-### Compile the code (if not done already)            
-g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp    #  -o GEMS_C tells the compiler to create an executable file called GEMS_C.      
+### Compile the code (if not done already)                             
+g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp    #  -o GEMS_C tells the compiler to create an executable file called GEMS_C.            
 
-### Run the executable
-./GEMS_C_executable
-'''
+### Run the executable          
+./GEMS_C_executable                           
+'''           
 
-# Submit the Job using sbatch          
-sbatch GEMS_C.sh
+# Submit the Job using sbatch                  
+sbatch GEMS_C.sh               
 
 
 # Srun job order testing 10-16-2024 (It didn't work yet, even though it worked fine in my local computer)
