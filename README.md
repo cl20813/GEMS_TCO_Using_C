@@ -1,5 +1,5 @@
 
-# Run on Amarel Rutgers
+# Compile and run cpp file on Amarel Rutgers
 
 ### Important!
 All the header files (.h), sources files including main.cpp should be located at the same level inside the "GEMS_C" folder.
