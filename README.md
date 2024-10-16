@@ -9,10 +9,10 @@ All the header files (.h), sources files including main.cpp should be located at
 Usually we copy the entire folder but this doesn't work for main.cpp and I haven't figured out yet the solution.        
 scp -r "C:\Users\joonw\source\repos\GEMS_C2" jl2815@amarel.rutgers.edu:/home/jl2815/tco            # r stands for recursive, used to copy a folder.            
 
-Instead, I can upload other files separately by doing:
-scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.cpp" jl2815@amarel.rutgers.edu:/home/jl2815/tco          
-scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.h" jl2815@amarel.rutgers.edu:/home/jl2815/tco         
-
+Instead, I can upload other files separately by doing:              
+scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.cpp" jl2815@amarel.rutgers.edu:/home/jl2815/tco               
+scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.h" jl2815@amarel.rutgers.edu:/home/jl2815/tco               
+           
 Then, login to ondemand directly and upload main.cpp file manually. It worked when I downloaded and opened it. 
 
 http://ondemand.hpc.rutgers.edu
