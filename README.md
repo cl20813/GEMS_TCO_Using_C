@@ -61,8 +61,10 @@ module load gcc/11.2/openmpi/4.1.6-ez82
 ### link gsl        
 module avail gsl           
 module load gsl/2.8-ts840      # gsl/2.5-bd387                    
-git clone https://gitlab.com/libeigen/eigen.git            # I should reinstall packages in linux-based system                         
-g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp                 # in this frame I need to run all .cpp files and compile with GSL                    
+git clone https://gitlab.com/libeigen/eigen.git            # I should reinstall packages in linux-based system     
+
+### in this frame I need to run all .cpp files and compile with GSL                          
+g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp                                  
 srun --ntasks=1 --cpus-per-task=1 --mem=8GB --time=01:00:00 ./GEMS_C_executable                                   
 
                       
