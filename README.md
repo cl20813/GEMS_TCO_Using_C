@@ -21,9 +21,9 @@ http://ondemand.hpc.rutgers.edu
 ssh jl2815@amarel.rutgers.edu   # Now log back to amarel                 
 module use /projects/community/modulefiles                  
 
-nano GEMS_C.sh                  # open a new text editor     
-'''
-#!/bin/bash          
+nano GEMS_C.sh                  # open a new text editor                      
+'''                        
+#!/bin/bash                             
 #SBATCH --job-name=C_test_job        # Job name         
 #SBATCH --output=/home/jl2815/tco/output_%j.out            # Standard output file (%j = JobID)        
 #SBATCH --error=/home/jl2815/tco/error_%j.err              # Standard error file (%j = JobID)          
@@ -49,6 +49,7 @@ g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable 
 ### Run the executable
 ./GEMS_C_executable
 '''
+
 # Submit the Job using sbatch          
 sbatch GEMS_C.sh
 
