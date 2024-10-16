@@ -17,9 +17,9 @@ Then, login to ondemand directly and upload main.cpp file manually. It worked wh
 
 http://ondemand.hpc.rutgers.edu
 
-# Create the Slurm Batch Script
-ssh jl2815@amarel.rutgers.edu   # Now log back to amarel
-module use /projects/community/modulefiles  #without this, I can't load 2024.06-ts840
+# Create the Slurm Batch Script                 
+ssh jl2815@amarel.rutgers.edu   # Now log back to amarel                 
+module use /projects/community/modulefiles                  
 
 nano GEMS_C.sh                  # open a new text editor     
 '''
