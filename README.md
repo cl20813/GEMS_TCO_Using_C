@@ -9,7 +9,7 @@ If face errors, upload files separately.
 
 scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.cpp" jl2815@amarel.rutgers.edu:/home/jl2815/tco 
 scp "C:\Users\joonw\source\repos\GEMS_C\matern_cov.h" jl2815@amarel.rutgers.edu:/home/jl2815/tco
-scp "C:\Users\joonw\source\repos\GEMS_C\main.cpp" jl2815@amarel.rutgers.edu:/home/jl2815/tco
+scp "C:\Users\joonw\source\repos\GEMS_C2\main.cpp" jl2815@amarel.rutgers.edu:/home/jl2815/tco
 
 # Create the Slurm Batch Script
 ssh jl2815@amarel.rutgers.edu   # Now log back to amarel
