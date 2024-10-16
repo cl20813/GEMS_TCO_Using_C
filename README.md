@@ -15,29 +15,29 @@ scp "C:\Users\joonw\source\repos\GEMS_C2\main.cpp" jl2815@amarel.rutgers.edu:/ho
 ssh jl2815@amarel.rutgers.edu   # Now log back to amarel
 module use /projects/community/modulefiles  #without this, I can't load 2024.06-ts840
 
-nano GEMS_C.sh                  # open a new text editor
+nano GEMS_C.sh                  # open a new text editor     
 '''
-#!/bin/bash
-#SBATCH --job-name=C_test_job        # Job name
-#SBATCH --output=/home/jl2815/tco/output_%j.out            # Standard output file (%j = JobID)
-#SBATCH --error=/home/jl2815/tco/error_%j.err              # Standard error file (%j = JobID)
-#SBATCH --time=01:00:00                   # Maximum time 
-#SBATCH --ntasks=1                        # Number of tasks
-#SBATCH --cpus-per-task=8                 # Number of CPU cores per task
-#SBATCH --mem=16G                          # Memory per node
-#SBATCH --partition=main               # Partition to submit to
+#!/bin/bash          
+#SBATCH --job-name=C_test_job        # Job name         
+#SBATCH --output=/home/jl2815/tco/output_%j.out            # Standard output file (%j = JobID)        
+#SBATCH --error=/home/jl2815/tco/error_%j.err              # Standard error file (%j = JobID)          
+#SBATCH --time=01:00:00                   # Maximum time          
+#SBATCH --ntasks=1                        # Number of tasks         
+#SBATCH --cpus-per-task=8                 # Number of CPU cores per task         
+#SBATCH --mem=16G                          # Memory per node          
+#SBATCH --partition=main               # Partition to submit to           
 
 ### Load the Anaconda module to use srun 
-
-module purge                                     # unload every other environment to avoid conflict
-module use /projects/community/modulefiles                  # without this, I can't load 2024.06-ts840
-module load gcc/11.2/openmpi/4.1.6-ez82   
+      
+module purge                                     # unload every other environment to avoid conflict        
+module use /projects/community/modulefiles                  # without this, I can't load 2024.06-ts840          
+module load gcc/11.2/openmpi/4.1.6-ez82                       
 
 ### Navigate to the directory with the executable
 cd /home/jl2815/tco/GEMS_C
 
 ### Compile the code (if not done already)
-g++ -o GEMS_C_executable main.cpp    #  -o GEMS_C tells the compiler to create an executable file called GEMS_C.
+g++ -o GEMS_C_executable main.cpp    #  -o GEMS_C tells the compiler to create an executable file called GEMS_C.      
 
 ### Run the executable
 ./GEMS_C_executable
