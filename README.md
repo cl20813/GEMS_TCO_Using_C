@@ -54,18 +54,18 @@ g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable 
 sbatch GEMS_C.sh               
 
 
-# Srun job order testing 10-16-2024 (It didn't work yet, even though it worked fine in my local computer)
-cd /home/jl2815/tco/GEMS_C2                   
-module use /projects/community/modulefiles                                          
-module load gcc/11.2/openmpi/4.1.6-ez82       
-### link gsl
-module avail gsl
-module load gsl/2.8-ts840      # gsl/2.5-bd387 
-git clone https://gitlab.com/libeigen/eigen.git            # I should reinstall packages in linux-based system   scp -r "C:\Users\joonw\vcpkg" jl2815@amarel.rutgers.edu:/home/jl2815/tco/GEMS_C2            # r stands for recursive, used to copy a folder.   this isn't going to work. 
-g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp       # in this frame I need to run all .cpp files and compile with GSL
-srun --ntasks=1 --cpus-per-task=1 --mem=8GB --time=01:00:00 ./GEMS_C_executable
+# Srun job order testing 10-16-2024 (It didn't work yet, even though it worked fine in my local computer)        
+cd /home/jl2815/tco/GEMS_C2                              
+module use /projects/community/modulefiles                                                              
+module load gcc/11.2/openmpi/4.1.6-ez82               
+### link gsl        
+module avail gsl           
+module load gsl/2.8-ts840      # gsl/2.5-bd387                    
+git clone https://gitlab.com/libeigen/eigen.git            # I should reinstall packages in linux-based system   scp -r "C:\Users\joonw\vcpkg" jl2815@amarel.rutgers.edu:/home/jl2815/tco/GEMS_C2            # r stands for recursive, used to copy a folder.   this isn't going to work.         
+g++ -I /home/jl2815/tco/GEMS_C2/eigen -lgsl -lgslcblas -lm -o GEMS_C_executable main.cpp matern_cov.cpp       # in this frame I need to run all .cpp files and compile with GSL            
+srun --ntasks=1 --cpus-per-task=1 --mem=8GB --time=01:00:00 ./GEMS_C_executable                
 
-          
+                      
 # Check the output   
 
 squeue -u jl2815        # Status of my job       
